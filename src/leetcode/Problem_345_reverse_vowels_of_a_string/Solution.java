@@ -5,14 +5,21 @@
  */
 package leetcode.Problem_345_reverse_vowels_of_a_string;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author epapa
  */
 public class Solution {
 
-    public static void main(String[] args) {
-        System.out.println(new Solution().reverseVowels("A"));
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("input"));
+        String line = bufferedReader.readLine();
+        System.out.println(new Solution().reverseVowels(line));
     }   
 
     public String reverseVowels(String s) {
@@ -38,19 +45,10 @@ public class Solution {
     }
 
     private String swap(String s, int firstIndex, int secondIndex) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            if (i == firstIndex) {
-                sb.append(s.charAt(secondIndex));
-                continue;
-            }
-            if (i == secondIndex) {
-                sb.append(s.charAt(firstIndex));
-                continue;
-            }
-            sb.append(s.charAt(i));
-        }
-        return sb.toString();
+        char[] sChars = s.toCharArray();
+        sChars[firstIndex] = s.charAt(secondIndex);
+        sChars[secondIndex] = s.charAt(firstIndex);
+        return new String(sChars);
     }
 }
 
