@@ -5,22 +5,11 @@
  */
 package leetcode.Problem_345_reverse_vowels_of_a_string;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 /**
  *
  * @author epapa
  */
 public class Solution {
-
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("input"));
-        String line = bufferedReader.readLine();
-        System.out.println(new Solution().reverseVowels(line));
-    }   
 
     public String reverseVowels(String s) {
 
